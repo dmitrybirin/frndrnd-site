@@ -7,7 +7,7 @@ angular.module('ButtonApp', ['ngMaterial'])
     return Math.floor(Math.random() * (max - min + 1)) + min;
     }
 
-
+    this.buttonName = "Random Episode";
     this.click = function(){
         var seasonList = {
         3:25,
@@ -26,7 +26,9 @@ angular.module('ButtonApp', ['ngMaterial'])
         {
         this.episode = getRandomIntInclusive(1,24);
         }
-
+        
+        this.buttonName = "Try Again";
+        
         console.log("------FRIENDS RANDOM-------");
         console.log("Season: " + this.season);
         console.log("Episode: " +  this.episode);
@@ -38,9 +40,6 @@ angular.module('ButtonApp', ['ngMaterial'])
         gaLogClick();
             
     }
-
-    
-    
     
 });
 }());

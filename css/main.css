@@ -21,6 +21,12 @@ div#content {
  -webkit-align-items: center;
 }
 
+.results {
+    color: white;
+    font-size: 20px;
+}
+
+
 div#logo {
   padding-bottom: 5vh;
 }

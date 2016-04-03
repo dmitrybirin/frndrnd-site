@@ -1,36 +1,46 @@
 (function(){
 
 angular.module('ButtonApp', ['ngMaterial'])
-    .controller('ButtonCtrl', function() {
+    .controller('MainCtrl', function() {
 
     function getRandomIntInclusive(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
     }
 
-    var seasonList = {
-    3:25,
-    6:25,
-    10:17
-    };
 
-    var season = getRandomIntInclusive(1,10);
-    var episode = 0;
+    this.click = function(){
+        var seasonList = {
+        3:25,
+        6:25,
+        10:17
+        };
+        
+        this.season = getRandomIntInclusive(1,10);
+        this.episode = 0;
 
-    if (seasonList.hasOwnProperty(season.toString()))
-    {
-    episode = getRandomIntInclusive(1,seasonList[season]);  
+        if (seasonList.hasOwnProperty(this.season.toString()))
+        {
+        this.episode = getRandomIntInclusive(1,seasonList[season]);  
+        }
+        else 
+        {
+        this.episode = getRandomIntInclusive(1,24);
+        }
+
+        console.log("------FRIENDS RANDOM-------");
+        console.log("Season: " + this.season);
+        console.log("Episode: " +  this.episode);
+
+        var gaLogClick = function () {
+        ga('send', 'event', 'button', 'click', 'RandomEpisode');
+        };
+        
+        gaLogClick();
+            
     }
-    else 
-    {
-    episode = getRandomIntInclusive(1,24);
-    }
 
-    console.log("------FRIENDS RANDOM-------");
-    console.log("Season: " + season);
-    console.log("Episode: " + episode);
-    console.log("Opening the episode " + episode + " of the season " + season);
-    this.gaLogClick = function () {
-    ga('send', 'event', 'button', 'click', 'RandomEpisode');
-    };
+    
+    
+    
 });
 }());

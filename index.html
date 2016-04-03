@@ -25,18 +25,21 @@
         <script src="js/app.js"></script>
     </head>
 		<body>
-            <div id="content" ng-app="ButtonApp">
+            <div id="content" ng-app="ButtonApp" ng-controller="MainCtrl as mCtrl" >
                 <div id="logo">
                     <img src="img/FriendsLogoSmall.png" alt="Friends Logo">
                 </div>
-                <div ng-controller="ButtonCtrl as btnCtrl" >
+                <div >
                   <md-button class="btn"  
-                   ng-href={{btnCtrl.link}}
-                   ng-click="btnCtrl.gaLogClick()">Random Episode</md-button>
+                   ng-click="mCtrl.click()">Random Episode</md-button>
+                </div>
+                <div class="results" layout-center ng-show="mCtrl.episode > 0">
+                    <p>Season: {{mCtrl.season}}</p>
+                    <p>Episode: {{mCtrl.episode}}</p>
                 </div>
             </div>
+            
             <footer>
-                
                 <p>Designed by <a href="mailto:dmitry.birin@gmail.com?subject=Friends Randomizer">Dmitry Birin</a></p>
                 <p>Friends Randomizer</p>
             </footer>

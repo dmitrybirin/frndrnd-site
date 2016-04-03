@@ -28,7 +28,6 @@ angular.module('ButtonApp', ['ngMaterial'])
     console.log("------FRIENDS RANDOM-------");
     console.log("Season: " + season);
     console.log("Episode: " + episode);
-    this.link = "http://friends-online.co/eng/" + season + "-season/" + episode + "-seria-" + season + "-season.html";
     console.log("Opening the episode " + episode + " of the season " + season);
     this.gaLogClick = function () {
     ga('send', 'event', 'button', 'click', 'RandomEpisode');

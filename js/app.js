@@ -20,7 +20,7 @@ angular.module('ButtonApp', ['ngMaterial'])
 
         if (seasonList.hasOwnProperty(this.season.toString()))
         {
-        this.episode = getRandomIntInclusive(1,seasonList[season]);  
+        this.episode = getRandomIntInclusive(1,seasonList[this.season]);  
         }
         else 
         {

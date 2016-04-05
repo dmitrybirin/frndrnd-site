@@ -7,7 +7,6 @@ angular.module('ButtonApp', ['ngMaterial'])
     return Math.floor(Math.random() * (max - min + 1)) + min;
     }
 
-    this.buttonName = "Random Episode";
     this.click = function(){
         var seasonList = {
         3:25,
@@ -16,18 +15,15 @@ angular.module('ButtonApp', ['ngMaterial'])
         };
         
         this.season = getRandomIntInclusive(1,10);
-        this.episode = 0;
 
         if (seasonList.hasOwnProperty(this.season.toString()))
         {
-        this.episode = getRandomIntInclusive(1,seasonList[season]);  
+        this.episode = getRandomIntInclusive(1,seasonList[this.season]);  
         }
         else 
         {
         this.episode = getRandomIntInclusive(1,24);
         }
-        
-        this.buttonName = "Try Again";
         
         console.log("------FRIENDS RANDOM-------");
         console.log("Season: " + this.season);

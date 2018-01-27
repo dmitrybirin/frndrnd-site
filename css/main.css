@@ -8,6 +8,10 @@ body {
 div#content {
     background-color: black;
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
 }
 
 .results {
@@ -25,46 +29,25 @@ div#logo img {
     width: 15em;
 }
 
-p#uc{
-  color: white;
-  font-size: 4em;
-}
-
-.btn.md-button {
-    background-color: transparent;
-    border: 0.1em solid white;
-    color: white;
-    transition-property: background-color, color;
-    transition-duration: 0.7s;
-}
-
-.btn.md-button:not([disabled]):hover {
-  background-color: rgba(255, 255, 255, 1);
-  color: black;
-}
-
-footer {
+div#footer {
  background-color: black;
  display: flex;
  flex-direction: row;
  justify-content: flex-end;
- display: -webkit-flex;
- -webkit-flex-direction: row;
- -webkit-justify-content: flex-end;
 }
 
-footer p {
+div#footer p {
  margin: 0.9em;
  font-size: 0.9em;
  color: #888;	
 }
 
-footer a {
+div#footer a {
  text-decoration: none;
  color: #888;	
 }
 
-footer a:visited {
+div#footer a:visited {
  text-decoration: none;
  color: #888;
 }
